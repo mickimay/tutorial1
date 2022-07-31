@@ -20,7 +20,12 @@ public class Greeter {
     String language = args[0];
     String country = args[1];
     String name = args[2];
-    Greeter greeter = new Greeter(language, country, name);
-    System.out.println(greeter.sayHello());
+    if((language.length()!=2)||(country.length()!=2)) {
+      throw new IllegalArgumentException("Error: arg0 (language) and arg1 (country) must each be exactly two characters long");
+    }
+    else {
+      Greeter greeter = new Greeter(language, country, name);
+      System.out.println(greeter.sayHello());
+    }
   }
 }
